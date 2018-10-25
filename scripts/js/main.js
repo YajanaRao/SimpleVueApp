@@ -78,7 +78,7 @@ var ChatListItem = function (_React$Component2) {
       var _this4 = this;
 
       console.log(this.props.item.input);
-      fetch("http://perfui.herokuapp.com/project/gethint.php?q=" + this.props.item.input).then(function (res) {
+      fetch("https://perfui.herokuapp.com/project/gethint.php?q=" + this.props.item.input).then(function (res) {
         return res.json();
       }).then(function (result) {
         _this4.setState({
@@ -296,7 +296,7 @@ var ChatHeader = function (_React$Component4) {
         React.createElement(
           'div',
           { 'class': 'col-5' },
-          React.createElement('img', { src: 'http://perfui.herokuapp.com/static/image/avatar.png', 'class': 'img-circle center', alt: 'Cinque Terre', width: '40', height: '50' })
+          React.createElement('img', { src: 'https://perfui.herokuapp.com/static/image/avatar.png', 'class': 'img-circle center', alt: 'Cinque Terre', width: '40', height: '50' })
         ),
         React.createElement(
           'div',
