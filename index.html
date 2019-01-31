@@ -1,11 +1,174 @@
-<!-- Load React. -->
-<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yajana</title>
+    <link rel="shortcut icon" type="image/png" href="/fevicon/fevicon.ico" />
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
 
-<div id="app"></div>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <p class="title">Yajana</p>
+                </a>
 
-<div id="container" ></div>
-<script src="/scripts/js/main.js"></script>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+
+                    <a class="navbar-item">
+                        Documentation
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                About
+                            </a>
+                            <a class="navbar-item">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Report an issue
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light" href="https://yajana.herokuapp.com/">
+                                Visit Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Collection of Programs
+                </h1>
+                <h2 class="subtitle">
+                    Powered by open source
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div style="padding-top:1.75rem"></div>
+    <div class="container" id="app">
+        <div class="columns">
+            <div class="column is-one-third">
+
+                <aside class="menu">
+                    <p class="menu-label">
+                        C Programs
+                    </p>
+                    <ul class="menu-list">
+                        <li><a :class="[ tab === 'topic1' ? 'is-active' : '' ]" @click="tab='topic1'">Hello world</a></li>
+                        <li><a :class="[ tab === 'topic2' ? 'is-active' : '' ]" @click="tab='topic2'">GCD</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Bulma
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <a :class="[ tab === 'topic3' ? 'is-active' : '' ]" @click="tab='topic3'">Menu bar navigation using Bulma and Vue.js</a>
+                            <ul>
+                                <li><a :class="[ tab === 'topic4' ? 'is-active' : '' ]" @click="tab='topic4'">Bulma Menu bar</a></li>
+                                <li><a :class="[ tab === 'topic5' ? 'is-active' : '' ]" @click="tab='topic5'">Add Vue Logic</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column content" v-if=" tab ==='topic1'">
+                <!-- <div class="container"> -->
+                    <p class="title has-text-centered">C Program tutorial</p>
+                    <p class="is-large">Welcome to C programming</p>
+                    <p class="is-medium">Hello world is a simple c program which prints hello world into the console. To start with C
+                        programming you
+                        can start with any online C compiler. Copy and paste the bellow code and click on run button</p>
+                    <script src="https://gist.github.com/YajanaRao/1172987d548808f565629fd00b0bed15.js"></script>
+
+                    
+                <!-- </div> -->
+            </div>
+            <div class="column content" v-if=" tab ==='topic2'">
+                <!-- <div class="container"> -->
+                <p class="title has-text-centered">C Program tutorial</p>
+                <p class="is-large">Greatest Common Divisor</p>
+                <p class="is-medium">In mathematics, the greatest common divisor (gcd) of two or more integers, which are not all zero, is the largest
+                positive integer that divides each of the integers. For example, the gcd of 8 and 12 is 4.</p>
+                <script src="https://gist.github.com/YajanaRao/c2a5455255f914647dfa9498addba4c2.js"></script>
+               
+            
+                <!-- </div> -->
+            </div>
+            <div class="column content" v-if=" tab === 'topic3'">
+                <p class="title has-text-centered">
+                    Menu bar navigation using Bulma and Vue.js
+                </p>
+                <p class="is-large">
+                    At the end of the tutorial we will be having a menu what we see in this application
+                </p>
+                <p class="is-medium">
+                    To impliment this functionality, having a knowledge on Html, css and Javascript will be helpfull
+                </p>
+            </div>
+            <div class="column content" v-if=" tab ==='topic4'">
+                <!-- <div class="container"> -->
+                <p class="title has-text-centered">Create a menu Using Bulma</p>
+                <p class="is-large">Create a <a href="https://bulma.io/documentation/components/menu/">Bulma Menu</a> component</p> 
+                <p class="is-medium">All you need to do is to copy menu component from <a href="https://bulma.io/documentation/components/menu/"> this Website</a></p>            
+            
+                <!-- </div> -->
+            </div>
+            <div class="column content" v-if="tab === 'topic5'">
+                <p class="is-large">
+                    Modify the Menu according to the changes given bellow
+                </p>
+                <script src="https://gist.github.com/YajanaRao/1a11803718695312660e34834e1b1f41.js"></script>
+            </div>
+        </div>
+    </div>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p> This
+            <strong>Website</strong> is designed by <a href="https://yajana.herokuapp.com/">Yajana N Rao</a>. The source code is in
+            <a href="https://github.com/YajanaRao/YajanaRao.github.io">Github</a>
+        </p>
+    </div>
+</footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
